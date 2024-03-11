@@ -9,11 +9,11 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <!-- Memindahkan kelas "text-end" ke elemen "Home" -->
                 <li class="nav-item text-end">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link {{ $active === 'home' ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 </li>
                 <!-- Memindahkan kelas "text-end" ke elemen "buku buku" -->
                 <li class="nav-item text-end">
-                    <a class="nav-link" href="#">buku buku</a>
+                    <a class="nav-link {{ $active === 'book' ? 'active' : '' }}" href="/buku buku">buku buku</a>
                 </li>
                 <li class="nav-item text-end">
                     <a class="nav-link disabled" href="#">pinjam buku</a>

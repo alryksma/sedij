@@ -43,8 +43,4 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function bukus()
-    {
-        return $this->hasMany(Buku::class);
-    }
 }

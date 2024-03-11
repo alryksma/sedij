@@ -5,7 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Http\Controllers\SubjekBuku as ControllersSubjekBuku;
+use App\Models\Book;
 use App\Models\Buku;
+use App\Models\Category;
 use App\Models\kategori;
 use App\Models\subjekBuku;
 use App\Models\User;
@@ -25,46 +27,49 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::factory(3)->create();
+            Book::factory(20)->create();
+            Category::create([
+                'nama' => 'ipa',
+                'slug' => 'IPA',
+                'deskripsi' => 'buku buku maper ilmu pengetahuan alam'
+            ]);
 
-        kategori::create([
-            'nama' => 'MIPA',
-            'slug' => 'MIPA',
-            'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Adipisci, repellendus?',
+            Category::create([
+                'nama' => 'ips',
+                'slug' => 'IPS',
+                'deskripsi' => 'buku buku maper ilmu pengetahuan sosial'
+            ]);
 
-            'keterangan' => 'Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nemo velit possimus aliquam quae
-            praesentium, animi maxime accusamus. Ipsam, corrupti iure
-            odio tenetur magni fuga laudantium, labore quo mollitia
-            perspiciatis nemo.',
-        ]);
+            Category::create([
+                'nama' => 'mtk',
+                'slug' => 'MTK',
+                'deskripsi' => 'buku buku maper ilmu pengetahuan matematika'
+            ]);
 
-        kategori::create([
-            'nama' => 'IPS',
-            'slug' => 'IPS',
-            'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Adipisci, repellendus?',
+            Category::create([
+                'nama' => 'bahasa',
+                'slug' => 'BAHASA',
+                'deskripsi' => 'buku buku maper ilmu pengetahuan bahasa'
+            ]);
 
-            'keterangan' => 'Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nemo velit possimus aliquam quae
-            praesentium, animi maxime accusamus. Ipsam, corrupti iure
-            odio tenetur magni fuga laudantium, labore quo mollitia
-            perspiciatis nemo.',
-        ]);
-        kategori::create([
-            'nama' => 'Novel',
-            'slug' => 'novel',
-            'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Adipisci, repellendus?',
+            User::create([
+                'nama' => 'alfito jaunda',
+                'username' => '5220411231',
+                'password' => 'password'
+            ]);
 
-            'keterangan' => 'Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nemo velit possimus aliquam quae
-            praesentium, animi maxime accusamus. Ipsam, corrupti iure
-            odio tenetur magni fuga laudantium, labore quo mollitia
-            perspiciatis nemo.',
-        ]);
+            User::create([
+                'nama' => 'akbar sahar pardomuan',
+                'username' => '5220411232',
+                'password' => 'password'
+            ]);
 
-        Buku::factory(20)->create();
+            User::create([
+                'nama' => 'ali ramadhan',
+                'username' => '5220411233',
+                'password' => 'password'
+            ]);
+
     }
+
 }

@@ -1,4 +1,4 @@
-{{ @dd($kategori) }}
+{{-- {{ @dd($kategori) }} --}}
 @extends('layout.layouts')
 
 @section('header')
@@ -6,15 +6,7 @@
     <div class="d-flex justify-content-center ">
         <img src="https://source.unsplash.com/2100x500?school" alt="" class="img-fluid">
     </div>
-    <div class="navbar  justify-content-center d-flex">
-        <div class="container-fluid text-center mx-auto justify-content-center">
-            <form class="d-flex" role="search" action=''>
-                <input class="form-control me-2 text-center justify-content-center" type="search" placeholder="Search"
-                    aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
+
 
     {{-- <div class="input-group mb-3 justify-content-center">
         <form action="" method="GET">
@@ -28,65 +20,28 @@
 
 
 @section('bodycontainer')
-    <section class="container mt-5">
-        <h4 class="text-center">kategori buku</h4>
-        <div class="row">
-            <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $kategori->nama }}</h5>
-                        <p class="card-text">{{ $kategori->slug }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+
+    {{-- <section class="container mt-5 text-center justify-content-center"> --}}
+    {{-- <h4 class="mb-3">Buku Terbaru</h4>
+    <div id="carouselExampleIndicators" class="carousel slide">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
         </div>
-    </section>
-    <section class="container mt-5 text-center justify-content-center">
-        <h4 class="mb-3">Buku Terbaru</h4>
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://source.unsplash.com/500x500?onebook" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
+        @foreach ($imgcat as $img)
+            @if ($img->image)
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('storage/' . $img->image) }}" class="d-block w-100" alt="...">
+                    </div> --}}
+    {{-- <div class="carousel-item">
                     <img src="https://source.unsplash.com/500x500?onebook" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
@@ -94,8 +49,51 @@
                 </div>
                 <div class="carousel-item">
                     <img src="https://source.unsplash.com/500x500?onebook" class="d-block w-100" alt="Slide 4">
+                </div> --}}
+    {{-- </div>
+            @else
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://source.unsplash.com/500x500?onebook" class="d-block w-100" alt="...">
+                    </div>
                 </div>
+            @endif
+        @endforeach
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> --}}
+    {{-- </section> --}}
+    <section class="container mt-5 text-center justify-content-center">
+        <h4 class="mb-3">Buku Terbaru</h4>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                @foreach ($imgcat as $index => $img)
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"
+                        aria-label="Slide {{ $index + 1 }}"></button>
+                @endforeach
             </div>
+
+            <div class="carousel-inner">
+                @foreach ($imgcat as $index => $img)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                        @if ($img->image)
+                            <img src="{{ asset('storage/' . $img->image) }}" class="d-block w-100" alt="...">
+                        @else
+                            <img src="https://source.unsplash.com/500x500?onebook" class="d-block w-100" alt="...">
+                        @endif
+                    </div>
+                @endforeach
+            </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -109,8 +107,14 @@
         </div>
     </section>
 
-    <section class="container mt-5">
-        <h4 class='''>Penikmat koleksi bulan ini<br>
+
+
+
+
+
+
+    <section class="container mt-5 justify-center justify-content-center">
+        <h4 class=''>Penikmat koleksi bulan ini<br>
 
         </h4>
         <small>Pengunjung terbaik ada disini, rajin rajinlah membaca</small>
@@ -125,27 +129,34 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://source.unsplash.com/500x500?siswa" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="https://source.unsplash.com/300x300?siswa" class="d-block w-50 img-fluid" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://source.unsplash.com/500x500?siswa" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="https://source.unsplash.com/300x300?siswa" class="d-block w-50 img-fluid" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://source.unsplash.com/500x500?siswa" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="https://source.unsplash.com/300x300?siswa" class="d-block w-50 img-fluid" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -157,8 +168,12 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+
         </div>
     </section>
+
+
     <section class="container mt-5">
         <h4>Statistik bulan ini</h4>
         <div class="container text-center">

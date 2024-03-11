@@ -1,0 +1,16 @@
+{{-- @dd($books) --}}
+@extends('layout.layouts')
+@extends('layout.nav')
+@section('bodycontainer')
+    <h1 class="mb-5">Post Category : {{ $title }}</h1>
+
+    @foreach ($books as $bok)
+        <article class='mb-5'>
+            <h2>
+                <a href="/posts/{{ $bok->slug }}">{{ $bok->judul }}</a>
+            </h2>
+            <p>{{ $bok->deskripsis }}</p>
+        </article>
+
+    @endforeach
+@endsection
